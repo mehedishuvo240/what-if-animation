@@ -1,4 +1,5 @@
 import React from 'react';
+import { lerp, easeInOut } from './anim';
 
 // The mascot rig: one original character drawn in code, in the same style as the Hero rig
 // (flat fills, a darker shade on the side away from the light, a warm rim line on the lit edge,
@@ -143,6 +144,46 @@ export const mascotFaceAt = (f: number, keys: [number, MascotExpr][]): { expr: M
     if (i > 0 && f >= k - 2 && f < k + 1) blink = 1;
   }
   return { expr, blink };
+};
+
+type MKey = { f: number; p: Partial<MascotPose>; ease?: (t: number) => number };
+export const mascotPoseAt = (f: number, keys: MKey[], from: MascotPose = baseMascotPose): MascotPose => {
+  const full: { f: number; p: MascotPose; ease?: (t: number) => number }[] = [];
+  let cur = from;
+  for (const k of keys) {
+    cur = { ...cur, ...k.p };
+    full.push({ f: k.f, p: cur, ease: k.ease });
+  }
+  if (f <= full[0].f) return full[0].p;
+  for (let i = 0; i < full.length - 1; i++) {
+    const A = full[i];
+    const B = full[i + 1];
+    if (f <= B.f) {
+      const t = (B.ease ?? easeInOut)((f - A.f) / Math.max(1e-6, B.f - A.f));
+      return {
+        x: lerp(A.p.x, B.p.x, t),
+        y: lerp(A.p.y, B.p.y, t),
+        scale: lerp(A.p.scale, B.p.scale, t),
+        facing: t < 0.5 ? A.p.facing : B.p.facing,
+        tilt: lerp(A.p.tilt, B.p.tilt, t),
+        spin: lerp(A.p.spin, B.p.spin, t),
+        headTilt: lerp(A.p.headTilt, B.p.headTilt, t),
+        armL: { a: lerp(A.p.armL.a, B.p.armL.a, t), b: lerp(A.p.armL.b, B.p.armL.b, t) },
+        armR: { a: lerp(A.p.armR.a, B.p.armR.a, t), b: lerp(A.p.armR.b, B.p.armR.b, t) },
+        legL: { a: lerp(A.p.legL.a, B.p.legL.a, t), b: lerp(A.p.legL.b, B.p.legL.b, t) },
+        legR: { a: lerp(A.p.legR.a, B.p.legR.a, t), b: lerp(A.p.legR.b, B.p.legR.b, t) },
+        expr: A.p.expr,
+        handL: A.p.handL,
+        handR: A.p.handR,
+        blink: lerp(A.p.blink, B.p.blink, t),
+        look: lerp(A.p.look, B.p.look, t),
+        yaw: lerp(A.p.yaw, B.p.yaw, t),
+        squash: lerp(A.p.squash, B.p.squash, t),
+        sway: lerp(A.p.sway, B.p.sway, t),
+      };
+    }
+  }
+  return full[full.length - 1].p;
 };
 
 export const mascotToWorld = (pose: MascotPose, p: P): P => {

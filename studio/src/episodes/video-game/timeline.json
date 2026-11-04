@@ -1,0 +1,56 @@
+{
+  "slug": "video-game",
+  "title": "WHAT IF YOU WERE TRAPPED IN A VIDEO GAME?",
+  "fps": 30,
+  "total": 5400,
+  "segments": [
+    {"shot": "V1", "a": 0, "b": 240, "t0": 0, "t1": 240, "line": "You respawn in a living room. Everything looks like a video game."},
+    {"shot": "V2", "a": 240, "b": 450, "t0": 0, "t1": 210, "line": "You jump on the couch. It bounces like a trampoline."},
+    {"shot": "V3", "a": 450, "b": 660, "t0": 0, "t1": 210, "line": "You pick up a cookie. It glows. +10 HP."},
+    {"shot": "V4", "a": 660, "b": 900, "t0": 0, "t1": 240, "line": "You double-jump off the fridge."},
+    {"shot": "V5", "a": 900, "b": 1140, "t0": 0, "t1": 240, "line": "You pause time."},
+    {"shot": "V6", "a": 1140, "b": 1400, "t0": 0, "t1": 260, "line": "You respawn after falling."},
+    {"shot": "V7", "a": 1400, "b": 1640, "t0": 0, "t1": 240, "line": "The NPCs repeat the same line."},
+    {"shot": "V8", "a": 1640, "b": 1880, "t0": 0, "t1": 240, "line": "The world is made of blocks."},
+    {"shot": "V9", "a": 1880, "b": 2140, "t0": 0, "t1": 260, "line": "There is no exit door."},
+    {"shot": "V10", "a": 2140, "b": 2420, "t0": 0, "t1": 280, "line": "A glitchy figure watches you from the corner."},
+    {"shot": "V11", "a": 2420, "b": 2700, "t0": 0, "t1": 280, "line": "It does not blink."},
+    {"shot": "V12", "a": 2700, "b": 3020, "t0": 0, "t1": 320, "line": "Your sister is trapped in the loading screen."},
+    {"shot": "V13", "a": 3020, "b": 3380, "t0": 0, "t1": 360, "line": "You must reach her before the timer hits zero."},
+    {"shot": "V14", "a": 3380, "b": 3780, "t0": 0, "t1": 400, "line": "The final boss loads."},
+    {"shot": "V15", "a": 3780, "b": 4100, "t0": 0, "t1": 320, "line": "You have one life left."},
+    {"shot": "V16", "a": 4100, "b": 5400, "t0": 0, "t1": 1300, "line": "Part 1 of 2."}
+  ],
+  "shots": [
+    {"id": "V1", "size": "wide", "set": "living-room", "key": 30, "len": 240, "first": 0, "line": "You respawn in a living room. Everything looks like a video game.", "note": "Mascot stands in a blocky living room at dusk"},
+    {"id": "V2", "size": "medium", "set": "living-room", "key": 24, "len": 210, "first": 240, "line": "You jump on the couch. It bounces like a trampoline.", "note": "Mascot jumps on the couch"},
+    {"id": "V3", "size": "macro insert", "set": "living-room", "key": 16, "len": 210, "first": 450, "line": "You pick up a cookie. It glows. +10 HP.", "note": "Close-up of a glowing cookie in the mascot's hand"},
+    {"id": "V4", "size": "wide, camera follows", "set": "living-room", "key": 36, "len": 240, "first": 660, "line": "You double-jump off the fridge.", "note": "Mascot double-jumps off the fridge"},
+    {"id": "V5", "size": "medium", "set": "living-room", "key": 28, "len": 240, "first": 900, "line": "You pause time.", "note": "The world freezes; mascot moves freely"},
+    {"id": "V6", "size": "top-down", "set": "living-room", "key": 20, "len": 260, "first": 1140, "line": "You respawn after falling.", "note": "Mascot falls and respawns at the start point"},
+    {"id": "V7", "size": "over the shoulder", "set": "living-room", "key": 30, "len": 240, "first": 1400, "line": "The NPCs repeat the same line.", "note": "A blocky NPC faces the mascot, mouth looping"},
+    {"id": "V8", "size": "extreme close-up", "set": "living-room", "key": 14, "len": 240, "first": 1640, "line": "The world is made of blocks.", "note": "The mascot's hand touches a blocky wall"},
+    {"id": "V9", "size": "wide", "set": "living-room", "key": 40, "len": 260, "first": 1880, "line": "There is no exit door.", "note": "The room has no doors or windows, only walls"},
+    {"id": "V10", "size": "medium, low angle", "set": "living-room", "key": 26, "len": 280, "first": 2140, "line": "A glitchy figure watches you from the corner.", "note": "A distorted figure stands in the corner"},
+    {"id": "V11", "size": "close-up", "set": "living-room", "key": 18, "len": 280, "first": 2420, "line": "It does not blink.", "note": "Extreme close-up of the glitchy figure's unblinking eye"},
+    {"id": "V12", "size": "wide", "set": "loading-screen", "key": 44, "len": 320, "first": 2700, "line": "Your sister is trapped in the loading screen.", "note": "A loading screen with the sister stuck inside"},
+    {"id": "V13", "size": "medium", "set": "loading-screen", "key": 30, "len": 360, "first": 3020, "line": "You must reach her before the timer hits zero.", "note": "A countdown timer ticks down beside the mascot"},
+    {"id": "V14", "size": "low angle, slow push in", "set": "boss-room", "key": 48, "len": 400, "first": 3380, "line": "The final boss loads.", "note": "A massive boss door opens"},
+    {"id": "V15", "size": "extreme close-up", "set": "boss-room", "key": 12, "len": 320, "first": 3780, "line": "You have one life left.", "note": "A heart counter shows 1 remaining"},
+    {"id": "V16", "size": "title, wide", "set": "boss-room", "key": 50, "len": 1300, "first": 4100, "line": "Part 1 of 2.", "note": "The screen fades to black on the cliffhanger"}
+  ],
+  "fx": [
+    {"kind": "flash", "color": "#FFF3DC", "f": 450, "o": 0.6},
+    {"kind": "flash", "color": "#DDF2FF", "f": 900, "o": 0.5},
+    {"kind": "flash", "color": "#FFFFFF", "f": 1140, "o": 0.8},
+    {"kind": "flash", "color": "#FF3344", "f": 2140, "o": 0.7},
+    {"kind": "flash", "color": "#000000", "f": 4100, "o": 0.9}
+  ],
+  "audio": {
+    "voice": "video-game/voice.wav",
+    "sfx": "video-game/sfx.wav",
+    "voiceVol": 0.9,
+    "sfxVol": 0.5,
+    "musicVol": 0.0
+  }
+}
